@@ -14,8 +14,8 @@ public class GUI extends JFrame implements ActionListener {
         this.puzzle = new Puzzle();
         this.puzzle.shuffle();
         this.font = new Font(Font.SANS_SERIF,  Font.BOLD, 20);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.frame = new JFrame("15 Puzzle");
+        this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.frame.setSize(300, 300);
         this.frame.setLocation(1000, 500);
         this.panel = new JPanel();
