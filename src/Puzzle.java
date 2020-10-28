@@ -65,4 +65,11 @@ public class Puzzle {
         }
         return tileIdx;
     }
+
+    public boolean gameWon() {
+        for(int i = 0; i < this.getTiles().length - 1; i++) {
+            if (this.getTiles()[i][0] > this.getTiles()[i + 1][0]) return false;
+        }
+        return true;
+    }
 }
