@@ -49,7 +49,7 @@ public class Puzzle {
             this.resetPos();
         }
 
-        if(this.getTiles()[clickedTile][2] == this.getTiles()[emptyTile][2] && (this.getTiles()[emptyTile][1] == this.getTiles()[clickedTile][1] - 1 || this.getTiles()[emptyTile][1] == this.getTiles()[clickedTile][1] + 1)) {
+        else if(this.getTiles()[clickedTile][2] == this.getTiles()[emptyTile][2] && (this.getTiles()[emptyTile][1] == this.getTiles()[clickedTile][1] - 1 || this.getTiles()[emptyTile][1] == this.getTiles()[clickedTile][1] + 1)) {
             this.tiles[emptyTile][0] = this.getTiles()[clickedTile][0];
             this.tiles[clickedTile][0] = 16;
             this.resetPos();
