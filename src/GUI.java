@@ -45,6 +45,14 @@ public class GUI extends JFrame implements ActionListener {
         }
     }
 
+    public void victoryMsg() {
+        this.panel.removeAll();
+        this.panel.revalidate();
+        this.panel.repaint();
+        JLabel label = new JLabel("You just won the game (⊙.☉)", SwingConstants.CENTER);
+        this.panel.add(label);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
@@ -54,6 +62,10 @@ public class GUI extends JFrame implements ActionListener {
                 this.puzzle.moveTile(Integer.parseInt(e.getActionCommand()));
             }
             this.render();
+            if(this.puzzle.gameWon()) {
+                System.out.println("You won the game!");
+                this.victoryMsg();
+            }
         } catch (Exception err) {
             System.out.println("There is no tile here!");
         }
